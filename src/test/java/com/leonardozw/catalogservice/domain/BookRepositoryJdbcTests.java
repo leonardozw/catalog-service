@@ -2,7 +2,6 @@ package com.leonardozw.catalogservice.domain;
 
 import java.util.Optional;
 
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
@@ -28,7 +27,7 @@ public class BookRepositoryJdbcTests {
     @Test
     public void findBookByIsbnWhenExisting(){
         var bookIsbn = "1234561237";
-        var book = Book.of(bookIsbn, "Title", "Author", 9.99);
+        var book = Book.of(bookIsbn, "Title", "Author", 9.99, null);
 
         jdbcAggregateTemplate.insert(book);
         Optional<Book> actualBook = bookRepository.findByIsbn(bookIsbn);
