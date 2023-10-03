@@ -33,7 +33,7 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
-      - name:
+      - name: Validate Kubernetes manifests
         uses: stefanprodan/kube-tools@v1
         with:
           kubectl: 1.24.3
