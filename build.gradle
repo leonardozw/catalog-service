@@ -39,12 +39,12 @@ dependencies {
 
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation 'org.testcontainers:junit-jupiter'
-	//testImplementation 'org.testcontainers:postgresql'
 	testImplementation group: 'org.testcontainers', name: 'postgresql', version: '1.18.3'
 	testImplementation "com.github.dasniko:testcontainers-keycloak:${testKeycloakVersion}"
 
